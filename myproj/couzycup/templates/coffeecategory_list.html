@@ -1,0 +1,34 @@
+<!-- templates/coffeecategory_list.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+  <style>
+    .center {
+      text-align: center;
+      font-size: 1.5em; /* Adjust the font size as needed */
+    }
+
+    .category-table {
+      margin: auto;
+      font-size: 1.2em; /* Adjust the font size as needed */
+    }
+  </style>
+
+  <h2 class="center">Coffee Categories</h2>
+
+  <!-- Styled table to display data -->
+  <table class="category-table">
+    <thead>
+      <tr>
+        <th>Name</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for category in object_list %}
+        <tr>
+          <td>{{ category.name }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}
